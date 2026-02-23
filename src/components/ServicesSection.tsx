@@ -70,9 +70,11 @@ const ServicesSection = () => {
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`relative bg-card rounded-xl p-6 shadow-sm border transition-shadow hover:shadow-lg flex flex-col ${
-                pkg.popular ? "border-accent ring-2 ring-accent" : "border-border"
-              }`}
+              className={`relative bg-card rounded-xl p-6 shadow-sm 
+              border border-border 
+              transition-all duration-200 
+              hover:border-blue-600 hover:shadow-lg hover:ring-4
+              flex flex-col`}
             >
               {pkg.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
@@ -90,7 +92,7 @@ const ServicesSection = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant={pkg.popular ? "cta" : "outline"} className="w-full" asChild>
+              <Button variant={pkg.popular ? "outline" : "outline"} className="w-full" asChild>
                 <a href="#contact">Get Started</a>
               </Button>
             </div>

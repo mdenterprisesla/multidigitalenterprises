@@ -12,16 +12,25 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    // Placeholder — replace with actual email endpoint
+  
+    const subject = encodeURIComponent("New Website Inquiry");
+    const body = encodeURIComponent(
+      `Name: ${form.name}\n\n` +
+      `Email: ${form.email}\n\n` +
+      `Phone: ${form.phone}\n\n` +
+      `Message:\n${form.message}`
+    );
+  
+    // Show toast notification
+    toast({
+      title: "Message Ready to Send",
+      description: "Please press send in your email app. We'll get back to you within 24 hours.",
+    });
+  
+    // Slight delay so user sees the toast before email opens
     setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
-      setForm({ name: "", email: "", phone: "", message: "" });
-      setLoading(false);
-    }, 800);
+      window.location.href = `mailto:mdenterprisesla@gmail.com?subject=${subject}&body=${body}`;
+    }, 500);
   };
 
   return (
@@ -81,14 +90,14 @@ const ContactSection = () => {
               className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span className="font-medium">(XXX) XXX-XXXX</span>
+              <span className="font-medium">(310) 948-8255</span>
             </a>
             <a
-              href="mailto:info@multidigitalenterprises.com"
+              href="mailto:mdenterprisesla@gmail.com"
               className="flex items-center gap-3 text-primary-foreground hover:text-accent transition-colors"
             >
               <Mail className="w-5 h-5" />
-              <span className="font-medium">info@multidigitalenterprises.com</span>
+              <span className="font-medium">mdenterprisesla@gmail.com</span>
             </a>
           </div>
         </div>

@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "How long does it take to build my website?",
-    a: "Most single-page websites are completed within 5 business days. Multi-page websites are typically ready in about 7 business days.",
+    a: "Most single-page websites are completed within 1-3 business days. Multi-page websites are typically ready in about 3 business days.",
   },
   {
     q: "Will my website show up on Google?",
